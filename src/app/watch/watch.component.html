@@ -1,4 +1,7 @@
 <app-search (searchEvent)="handleSearchEvent($event)"></app-search>
+<button mat-button class="sort-button" (click)="sortByName()">Trier par nom</button>
+<button mat-button class="sort-button" (click)="sortByDate()">Trier par date</button>
+
 <div class="card-container">
   <mat-card *ngFor="let watch of filteredWatches" class="watch-card">
     <mat-card-header>
@@ -11,7 +14,7 @@
       <p>Date: {{ watch.date | date: 'longDate' }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-icon-button (click)="toggleFavorite(watch)">
+      <button mat-icon-button class="like-button" (click)="toggleFavorite(watch)">
         <mat-icon>{{ watch.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
       </button>
     </mat-card-actions>
