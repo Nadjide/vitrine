@@ -1,0 +1,19 @@
+<app-search (searchEvent)="handleSearchEvent($event)"></app-search>
+<div class="card-container">
+  <mat-card *ngFor="let watch of filteredWatches" class="watch-card">
+    <mat-card-header>
+      <div mat-card-avatar class="watch-header-image"></div>
+      <mat-card-title>{{ watch.name }}</mat-card-title>
+      <mat-card-subtitle>Prix: {{ watch.price }}€</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="watch.image" alt="Image de montre">
+    <mat-card-content>
+      <p>Date: {{ watch.date | date: 'longDate' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button (click)="toggleFavorite(watch)">
+        <mat-icon>{{ watch.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
