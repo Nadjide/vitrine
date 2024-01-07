@@ -102,6 +102,7 @@ export class WatchComponent implements OnInit {
   sortNameAsc = true;
   sortDateAsc = true;
 
+  // Trier par date
   sortByDate() {
     this.filteredWatches.sort((a, b) => {
       let dateA = new Date(a.date);
