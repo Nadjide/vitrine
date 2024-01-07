@@ -10,7 +10,7 @@
     </mat-card-header>
     <img mat-card-image [src]="watch.image" alt="Image de montre">
     <mat-card-content>
-      <p>{{ watch.date | date:'fullDate':'':'fr' }}</p>
+      <p>Disponible depuis le {{ watch.date | date:'fullDate':'':'fr' }}</p>
     </mat-card-content>
     <mat-card-actions class="like-button-container">
       <button mat-icon-button class="like-button" (click)="toggleFavorite(watch)">
