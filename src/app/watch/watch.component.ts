@@ -68,6 +68,30 @@ export class WatchComponent implements OnInit {
       date: new Date(2023, 2, 12),
       isFavorite: false,
     },
+    {
+      name: 'IWC',
+      price: 7000,
+      image:
+        'https://www.iwc.com/content/dam/rcq/iwc/21/49/85/9/2149859.png.transform.global_image_480_2x.png',
+      date: new Date(2022, 9, 7),
+      isFavorite: false,
+    },
+    {
+      name: 'Audemars Piguet',
+      price: 12000,
+      image:
+        'https://www.blackvenomwatch.com/upload/images/Collection/Black_Collection/Audemars_Piguet/Royal_Oak/AP_15400_141/AP_15400_141.png',
+      date: new Date(2023, 7, 25),
+      isFavorite: false,
+    },
+    {
+      name: 'Jaeger-LeCoultre',
+      price: 10000,
+      image:
+        'https://img.jaeger-lecoultre.com/product-slider-hero-mobile-3/9d6c27d4af2e7122bb1a3f18b907d581b3a205f7.jpg',
+      date: new Date(2022, 10, 1),
+      isFavorite: false,
+    },
   ];
   filteredWatches = this.watches;
   constructor() {}
