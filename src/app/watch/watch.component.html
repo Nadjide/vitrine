@@ -1,9 +1,11 @@
-<app-search (searchEvent)="handleSearchEvent($event)"></app-search>
-<button mat-button class="sort-button" (click)="sortByName()">Trier par nom</button>
-<button mat-button class="sort-button" (click)="sortByDate()">Trier par date</button>
+<input [(ngModel)]="searchTerm" placeholder="Rechercher une montre" class="search-bar">
+<div class="button-container">
+  <button (click)="sortByName()">Trier par nom</button>
+  <button (click)="sortByDate()">Trier par date</button>
+</div>
 
 <div class="card-container">
-  <mat-card *ngFor="let watch of filteredWatches" class="watch-card">
+  <mat-card *ngFor="let watch of (watches | search:searchTerm )" class="watch-card">
     <mat-card-header>
       <mat-card-title>{{ watch.name }}</mat-card-title>
       <mat-card-subtitle>Prix: {{ watch.price }}€</mat-card-subtitle>

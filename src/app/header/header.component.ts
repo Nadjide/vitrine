@@ -20,7 +20,6 @@ import { RouterLinkActive } from '@angular/router';
         </div>
       </nav>
     </header>
-    <router-outlet></router-outlet>
   `,
   styleUrl: './header.component.css',
 })

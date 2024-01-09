@@ -1,1 +1,26 @@
-<p>page de contact</p>
+<mat-card class="contact-card">
+  <mat-card-header>
+    <mat-card-title>Contactez-nous</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form>
+      <mat-form-field class="full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Votre nom">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Votre email">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput placeholder="Votre message"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Envoyer</button>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -4,11 +4,22 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from '../search/search.component';
+import { SearchPipe } from '../search.pipe';
+import { SortPipe } from '../sort.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-watch',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule, SearchComponent],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatIconModule,
+    SearchComponent,
+    SearchPipe,
+    SortPipe,
+    FormsModule,
+  ],
   templateUrl: './watch.component.html',
   styleUrl: './watch.component.css',
 })
@@ -33,7 +44,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 3,
+      id: 3,
       name: 'Hublot',
       price: 15000,
       image:
@@ -42,7 +53,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 4,
+      id: 4,
       name: 'Cartier',
       price: 8000,
       image: 'https://i.ebayimg.com/images/g/tWAAAOSwOEBlH0Lo/s-l1200.webp',
@@ -50,7 +61,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 5,
+      id: 5,
       name: 'Tag Heuer',
       price: 6000,
       image:
@@ -59,7 +70,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 6,
+      id: 6,
       name: 'Breitling',
       price: 9000,
       image:
@@ -68,7 +79,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 7,
+      id: 7,
       name: 'Patek Philippe',
       price: 20000,
       image: 'https://pics.zeitauktion.com/2023/2300998_sw6_theme2_2k.jpg',
@@ -76,7 +87,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 8,
+      id: 8,
       name: 'IWC',
       price: 7000,
       image:
@@ -85,7 +96,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 9,
+      id: 9,
       name: 'Audemars Piguet',
       price: 12000,
       image:
@@ -94,7 +105,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
-      id : 10,
+      id: 10,
       name: 'Jaeger-LeCoultre',
       price: 10000,
       image:
@@ -103,8 +114,13 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
   ];
-  filteredWatches = this.watches;
-  constructor() {}
+  searchTerm: string = '';
+  currentSortField: string = '';
+  isSortAscending: boolean = true;
+
+  constructor(
+
+  ) {}
 
   ngOnInit(): void {
     const storedFavorites = localStorage.getItem('favorites');
@@ -115,44 +131,36 @@ export class WatchComponent implements OnInit {
         isFavorite: favorites.includes(watch.id),
       }));
     }
-
-    this.filteredWatches = this.watches;
   }
 
   toggleFavorite(watch: Watch): void {
     watch.isFavorite = !watch.isFavorite;
-    const favorites = this.watches
-      .filter((w) => w.isFavorite)
-      .map((w) => w.id);
+    const favorites = this.watches.filter((w) => w.isFavorite).map((w) => w.id);
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }
 
-  handleSearchEvent(searchTerm: string): void {
-    this.filteredWatches = this.watches.filter((watch) =>
-      watch.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+  sortByName(): void {
+    this.currentSortField = 'name';
+    this.isSortAscending = !this.isSortAscending;
+    this.sortWatches();
   }
 
-  sortNameAsc = true;
-  sortDateAsc = true;
+  sortByDate(): void {
+    this.currentSortField = 'date';
+    this.isSortAscending = !this.isSortAscending;
+    this.sortWatches();
+  }
 
-  // Trier par date
-  sortByDate() {
-    this.filteredWatches.sort((a, b) => {
-      let dateA = new Date(a.date);
-      let dateB = new Date(b.date);
-      return this.sortDateAsc ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
+  private sortWatches(): void {
+    this.watches.sort((a: any, b: any) => {
+      if (a[this.currentSortField] < b[this.currentSortField]) {
+        return this.isSortAscending ? -1 : 1;
+      } else if (a[this.currentSortField] > b[this.currentSortField]) {
+        return this.isSortAscending ? 1 : -1;
+      } else {
+        return 0;
+      }
     });
-    this.sortDateAsc = !this.sortDateAsc;
   }
 
-  // Tri par nom
-  sortByName() {
-    this.filteredWatches.sort((a, b) => {
-      let nameA = a.name.toUpperCase();
-      let nameB = b.name.toUpperCase();
-      return this.sortNameAsc ? (nameA < nameB ? -1 : (nameA > nameB ? 1 : 0)) : (nameA > nameB ? -1 : (nameA < nameB ? 1 : 0));
-    });
-    this.sortNameAsc = !this.sortNameAsc;
-  }
 }
