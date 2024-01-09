@@ -15,6 +15,7 @@ import { SearchComponent } from '../search/search.component';
 export class WatchComponent implements OnInit {
   watches: Watch[] = [
     {
+      id: 1,
       name: 'Rolex',
       price: 10000,
       image:
@@ -23,6 +24,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id: 2,
       name: 'Omega',
       price: 5000,
       image:
@@ -31,6 +33,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 3,
       name: 'Hublot',
       price: 15000,
       image:
@@ -39,6 +42,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 4,
       name: 'Cartier',
       price: 8000,
       image: 'https://i.ebayimg.com/images/g/tWAAAOSwOEBlH0Lo/s-l1200.webp',
@@ -46,6 +50,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 5,
       name: 'Tag Heuer',
       price: 6000,
       image:
@@ -54,6 +59,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 6,
       name: 'Breitling',
       price: 9000,
       image:
@@ -62,6 +68,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 7,
       name: 'Patek Philippe',
       price: 20000,
       image: 'https://pics.zeitauktion.com/2023/2300998_sw6_theme2_2k.jpg',
@@ -69,6 +76,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 8,
       name: 'IWC',
       price: 7000,
       image:
@@ -77,6 +85,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 9,
       name: 'Audemars Piguet',
       price: 12000,
       image:
@@ -85,6 +94,7 @@ export class WatchComponent implements OnInit {
       isFavorite: false,
     },
     {
+      id : 10,
       name: 'Jaeger-LeCoultre',
       price: 10000,
       image:
