@@ -112,7 +112,7 @@ export class WatchComponent implements OnInit {
       const favorites = JSON.parse(storedFavorites);
       this.watches = this.watches.map((watch) => ({
         ...watch,
-        isFavorite: favorites.includes(watch.name),
+        isFavorite: favorites.includes(watch.id),
       }));
     }
 
@@ -123,7 +123,7 @@ export class WatchComponent implements OnInit {
     watch.isFavorite = !watch.isFavorite;
     const favorites = this.watches
       .filter((w) => w.isFavorite)
-      .map((w) => w.name);
+      .map((w) => w.id);
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }
 
