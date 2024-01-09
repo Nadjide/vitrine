@@ -5,7 +5,7 @@
 </div>
 
 <div class="card-container">
-  <mat-card *ngFor="let watch of (watches | search:searchTerm )" class="watch-card">
+  <mat-card *ngFor="let watch of (watches | search:searchTerm)" class="watch-card" (click)="showDetails(watch)">
     <mat-card-header>
       <mat-card-title>{{ watch.name }}</mat-card-title>
       <mat-card-subtitle>Prix: {{ watch.price }}€</mat-card-subtitle>

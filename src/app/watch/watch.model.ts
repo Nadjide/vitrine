@@ -4,5 +4,6 @@ export interface Watch {
   price: number;
   image: string;
   date: Date;
+  description: string;
   isFavorite: boolean;
 }

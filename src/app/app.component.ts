@@ -12,6 +12,8 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { PanierComponent } from './panier/panier.component';
+import { WatchDetailsComponent } from './watch-details/watch-details.component';
+import { WatchService } from './watch.service';
 
 import { SortPipe } from './sort.pipe';
 import { SearchPipe } from './search.pipe';
@@ -30,6 +32,7 @@ registerLocaleData(localeFr, 'fr');
     SearchComponent,
     FooterComponent,
     ContactComponent,
+    WatchDetailsComponent,
     RouterModule,
     PanierComponent,
     SortPipe,
