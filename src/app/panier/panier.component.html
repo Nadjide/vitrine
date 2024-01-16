@@ -7,13 +7,14 @@
     </mat-card-header>
     <mat-card-content>
       <p>{{ watch.description }}</p>
+      <p>Quantité : {{ watch.quantity }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="warn" (click)="removeWatch(watch)">Retier</button>
+      <button mat-button color="warn" (click)="removeWatch(watch)">Retirer</button>
     </mat-card-actions>
   </mat-card>
   <div class="cart-total">
-    Total  : {{ getTotal() }} €
+    Total de votre panier : {{ getTotal() }} €
   </div>
 </div>
 

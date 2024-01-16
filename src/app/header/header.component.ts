@@ -16,7 +16,7 @@ import { RouterLinkActive } from '@angular/router';
           <li><a routerLink="/contact">Contact</a></li>
         </ul>
         <div class="cart">
-          <a href="/panier">Panier</a>
+          <a class="panier-link" href="/panier">Panier</a>
         </div>
       </nav>
     </header>

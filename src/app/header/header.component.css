@@ -38,3 +38,8 @@
   padding: 5px 15px;
   border-radius: 5px;
 }
+
+.panier-link {
+  text-decoration: none !important;
+  color: rgb(0, 0, 0)
+}

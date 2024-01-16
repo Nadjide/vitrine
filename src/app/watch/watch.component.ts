@@ -30,7 +30,7 @@ export class WatchComponent implements OnInit {
       id: 1,
       name: 'Rolex',
       description:
-        'Luxury Swiss watchmaker known for its prestige and precision.',
+        'Fabricant suisse de montres de luxe réputé pour son prestige et sa précision.',
       price: 10000,
       image:
         'https://lemag.cresus.fr/wp-content/uploads/2023/06/56570-rolex-milgauss-3632opt-e1687955024296.jpg',
@@ -41,7 +41,7 @@ export class WatchComponent implements OnInit {
       id: 2,
       name: 'Omega',
       description:
-        'Swiss luxury watch brand with a rich heritage and innovative designs.',
+        'Marque suisse de montres de luxe avec un riche héritage et des designs innovants.',
       price: 5000,
       image:
         'https://i.ebayimg.com/00/s/MTYwMFgxNDg2/z/MAQAAOSw7YxkCLUt/$_1.JPG',
@@ -52,7 +52,7 @@ export class WatchComponent implements OnInit {
       id: 3,
       name: 'Hublot',
       description:
-        'Swiss luxury watchmaker known for its bold and distinctive designs.',
+        'Fabricant suisse de montres de luxe connu pour ses designs audacieux et distinctifs.',
       price: 15000,
       image:
         'https://www.frojo.com/218596-home_default/montre-big-bang-chronograph-44-mm-acier-cadran-noir-bracelet-caoutchouc-noir.jpg',
@@ -63,7 +63,7 @@ export class WatchComponent implements OnInit {
       id: 4,
       name: 'Cartier',
       description:
-        'French luxury watch and jewelry manufacturer with a timeless elegance.',
+        'Fabricant français de montres et de bijoux de luxe avec une élégance intemporelle.',
       price: 8000,
       image: 'https://i.ebayimg.com/images/g/tWAAAOSwOEBlH0Lo/s-l1200.webp',
       date: new Date(2022, 11, 5),
@@ -73,7 +73,7 @@ export class WatchComponent implements OnInit {
       id: 5,
       name: 'Tag Heuer',
       description:
-        'Swiss luxury watch brand known for its sporty and avant-garde timepieces.',
+        'Marque suisse de montres de luxe connue pour ses garde-temps sportifs et avant-gardistes.',
       price: 6000,
       image:
         'https://www.tagheuer.com/on/demandware.static/-/Library-Sites-TagHeuer-Shared/default/dwb9b4d31b/images/sprites/Formula1/WAZ1118.BA0875/RTW_backUp.jpg',
@@ -84,7 +84,7 @@ export class WatchComponent implements OnInit {
       id: 6,
       name: 'Breitling',
       description:
-        'Swiss luxury watchmaker specializing in aviation-inspired timepieces.',
+        "Fabricant suisse de montres de luxe spécialisé dans les garde-temps inspirés de l'aviation.",
       price: 9000,
       image:
         'https://www.breitling.com/media/image/2/gallery_square_700/asset-version-87be0b6013/ab0138211b1a1-navitimer-b01-chronograph-43-three-quarter.png',
@@ -95,7 +95,7 @@ export class WatchComponent implements OnInit {
       id: 7,
       name: 'Patek Philippe',
       description:
-        'Swiss luxury watch manufacturer known for its exquisite craftsmanship.',
+        'Fabricant suisse de montres de luxe réputé pour son artisanat exquis.',
       price: 20000,
       image: 'https://pics.zeitauktion.com/2023/2300998_sw6_theme2_2k.jpg',
       date: new Date(2023, 2, 12),
@@ -105,7 +105,7 @@ export class WatchComponent implements OnInit {
       id: 8,
       name: 'IWC',
       description:
-        'Swiss luxury watch brand with a focus on engineering and technical innovation.',
+        "Marque suisse de montres de luxe axée sur l'ingénierie et l'innovation technique.",
       price: 7000,
       image:
         'https://www.iwc.com/content/dam/rcq/iwc/21/49/85/9/2149859.png.transform.global_image_480_2x.png',
@@ -116,7 +116,7 @@ export class WatchComponent implements OnInit {
       id: 9,
       name: 'Audemars Piguet',
       description:
-        'Swiss luxury watchmaker known for its complex mechanical timepieces.',
+        'Fabricant suisse de montres de luxe connu pour ses garde-temps mécaniques complexes.',
       price: 12000,
       image:
         'https://www.blackvenomwatch.com/upload/images/Collection/Black_Collection/Audemars_Piguet/Royal_Oak/AP_15400_141/AP_15400_141.png',
@@ -127,7 +127,7 @@ export class WatchComponent implements OnInit {
       id: 10,
       name: 'Jaeger-LeCoultre',
       description:
-        'Swiss luxury watchmaker with a long history of innovation and craftsmanship.',
+        "Fabricant suisse de montres de luxe avec une longue histoire d'innovation et d'artisanat.",
       price: 10000,
       image:
         'https://img.jaeger-lecoultre.com/product-slider-hero-mobile-3/9d6c27d4af2e7122bb1a3f18b907d581b3a205f7.jpg',
@@ -141,7 +141,6 @@ export class WatchComponent implements OnInit {
   selectedWatch: any;
 
   constructor(private router: Router) {}
-
 
   showDetails(watch: any): void {
     this.router.navigate(['/watch-details', watch.id], { state: { watch } });

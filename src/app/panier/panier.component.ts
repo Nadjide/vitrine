@@ -23,11 +23,17 @@ export class PanierComponent implements OnInit {
   }
 
   removeWatch(watch: any): void {
-    this.watches = this.watches.filter((w) => w.id !== watch.id);
-    localStorage.setItem('panier', JSON.stringify(this.watches));
+  let found = this.watches.find((item: any) => item.id === watch.id);
+  if (found) {
+    found.quantity--;
+    if (found.quantity === 0) {
+      this.watches = this.watches.filter((w) => w.id !== watch.id);
+    }
   }
+  localStorage.setItem('panier', JSON.stringify(this.watches));
+}
 
   getTotal(): number {
-    return this.watches.reduce((acc, watch) => acc + watch.price, 0);
-  }
+  return this.watches.reduce((acc, watch) => acc + watch.price * watch.quantity, 0);
+}
 }
