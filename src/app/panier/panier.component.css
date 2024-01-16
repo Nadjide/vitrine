@@ -9,14 +9,16 @@
   margin: 10px;
 }
 
-.cart-item-image {
-  background-size: cover;
-  height: 200px;
-}
-
 .empty-cart {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.cart-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
 }

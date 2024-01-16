@@ -9,9 +9,12 @@
       <p>{{ watch.description }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="warn">Retier</button>
+      <button mat-button color="warn" (click)="removeWatch(watch)">Retier</button>
     </mat-card-actions>
   </mat-card>
+  <div class="cart-total">
+    Total  : {{ getTotal() }} €
+  </div>
 </div>
 
 <ng-template #emptyCart>
