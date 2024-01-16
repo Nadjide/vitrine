@@ -15,8 +15,8 @@
   </mat-card>
   <div class="cart-total">
     Total de votre panier : {{ getTotal() }} €
-    <button mat-raised-button color="primary" (click)="confirmOrder()">Confirmer la commande</button>
   </div>
+  <button class="confirm-button" mat-raised-button color="primary" (click)="confirmOrder()">Confirmer la commande</button>
 </div>
 
 <ng-template #emptyCart>

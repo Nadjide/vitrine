@@ -1,14 +1,16 @@
-<mat-card *ngIf="watch">
-  <mat-card-header>
-    <mat-card-title>{{ watch.name }}</mat-card-title>
-    <mat-card-subtitle>Prix: {{ watch.price }}€</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src]="watch.image" alt="Image de {{ watch.name }}">
-  <mat-card-content>
-    <p>Description: {{ watch.description }}</p>
-    <p>Disponible depuis: {{ watch.date | date:'fullDate':'':'fr' }}</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="addToCart()">Ajouter au panier</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <mat-card *ngIf="watch">
+    <mat-card-header>
+      <mat-card-title>{{ watch.name }}</mat-card-title>
+      <mat-card-subtitle>Prix: {{ watch.price }}€</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="watch.image" alt="Image de {{ watch.name }}">
+    <mat-card-content>
+      <p>Description: {{ watch.description }}</p>
+      <p>Disponible depuis: {{ watch.date | date:'fullDate':'':'fr' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addToCart()">Ajouter au panier</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
