@@ -19,12 +19,12 @@ import { CommonModule } from '@angular/common';
       <nav class="navbar">
         <div class="logo">Nadj Watch</div>
         <ul class="nav-links">
-          <li><a href="/">Accueil</a></li>
+          <li><a routerLink="/">Accueil</a></li>
           <li><a routerLink="/contact">Contact</a></li>
         </ul>
         <div class="cart">
           <div class="panier-container">
-            <a class="panier-link" href="/panier">Panier</a>
+            <a class="panier-link" routerLink="/panier">Panier</a>
             <span class="cart-item-count" *ngIf="cartItemCount > 0">{{
               cartItemCount
             }}</span>
