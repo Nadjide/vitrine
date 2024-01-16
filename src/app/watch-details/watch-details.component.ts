@@ -22,4 +22,11 @@ export class WatchDetailsComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
+
+  addToCart(): void {
+  let arr = localStorage.getItem('panier') ? JSON.parse(localStorage.getItem('panier')!) : [];
+  arr.push(this.watch);
+  localStorage.setItem('panier', JSON.stringify(arr));
+}
+
 }

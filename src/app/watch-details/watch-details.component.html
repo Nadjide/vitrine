@@ -8,4 +8,7 @@
     <p>Description: {{ watch.description }}</p>
     <p>Disponible depuis: {{ watch.date | date:'fullDate':'':'fr' }}</p>
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addToCart()">Ajouter au panier</button>
+  </mat-card-actions>
 </mat-card>

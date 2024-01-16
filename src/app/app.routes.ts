@@ -9,7 +9,8 @@ export const routes: Routes = [
   { path: '', component: WatchComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'panier', component: PanierComponent },
-  { path: 'watch-details', component: WatchDetailsComponent },
+  { path: 'watch-details/:id', component: WatchDetailsComponent },
+  { path: '**', redirectTo: '' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

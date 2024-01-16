@@ -140,10 +140,11 @@ export class WatchComponent implements OnInit {
   isSortAscending: boolean = true;
   selectedWatch: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
+
 
   showDetails(watch: any): void {
-    this.router.navigate(['/watch-details'], { state: { watch } });
+    this.router.navigate(['/watch-details', watch.id], { state: { watch } });
   }
 
   ngOnInit(): void {
@@ -186,5 +187,4 @@ export class WatchComponent implements OnInit {
       }
     });
   }
-
 }
