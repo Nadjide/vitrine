@@ -7,3 +7,7 @@
 app-watch {
   flex-grow: 1;
 }
+
+app-footer {
+  margin-top: auto;
+}
